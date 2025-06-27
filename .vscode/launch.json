@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // {
+    //   "name": "Debug openssl",
+    //   "type": "lldb",
+    //   "request": "launch",
+    //   "program": "${workspaceFolder}/test/bftest",
+    //   "args": [],
+    //   "cwd": "${workspaceFolder}",
+    //   "env": {
+    //     "LD_LIBRARY_PATH": "${workspaceFolder}/openssl/build/lib"
+    //   },
+    //   "preLaunchTask": "build"
+    // },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/test/bftest",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "environment": [
+        {
+          "name": "LD_LIBRARY_PATH",
+          "value": "${workspaceFolder}/build/lib:${env:LD_LIBRARY_PATH}"
+        }
+      ],
+      "sourceFileMap": {
+        "/custom/include": "${workspaceFolder}/build/include"
+      },
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build"
+    }
+  ]
+}

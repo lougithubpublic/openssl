@@ -1,0 +1,10 @@
+build/*
+*.o
+certs/*
+crypto/*/lib
+libcrypto.pc
+libcrypto.a
+libssl.a
+libssl.pc
+openssl.pc
+test/*test
