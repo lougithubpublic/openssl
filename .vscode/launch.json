@@ -1,18 +1,19 @@
 {
   "version": "0.2.0",
   "configurations": [
-    // {
-    //   "name": "Debug openssl",
-    //   "type": "lldb",
-    //   "request": "launch",
-    //   "program": "${workspaceFolder}/test/bftest",
-    //   "args": [],
-    //   "cwd": "${workspaceFolder}",
-    //   "env": {
-    //     "LD_LIBRARY_PATH": "${workspaceFolder}/openssl/build/lib"
-    //   },
-    //   "preLaunchTask": "build"
-    // },
+
+    {
+      "name": "Debug openssl",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/test/bftest",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "LD_LIBRARY_PATH": "${workspaceFolder}/build/lib:${env:LD_LIBRARY_PATH}"
+      },
+      "preLaunchTask": "build"
+    },
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -37,8 +38,18 @@
         {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
+          "ignoreFailures": false
+        },
+        {
+          "description": "Set OpenSSL source directory",
+          "text": "directory ${workspaceFolder}/test", // 替换为你的OpenSSL源码路径
+          "ignoreFailures": false
+        },
+         {
+                    "description":  "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
       ],
       "preLaunchTask": "build"
     }

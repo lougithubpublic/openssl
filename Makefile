@@ -13,8 +13,8 @@ SHLIB_MAJOR=0
 SHLIB_MINOR=9.8
 SHLIB_EXT=.so.$(SHLIB_MAJOR).$(SHLIB_MINOR)
 PLATFORM=linux-x86_64
-OPTIONS=--prefix=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build no-camellia no-gmp no-krb5 no-mdc2 no-rc5 no-shared no-zlib no-zlib-dynamic
-CONFIGURE_ARGS=linux-x86_64 --prefix=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build
+OPTIONS=--prefix=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build -O0 no-camellia no-gmp no-krb5 no-mdc2 no-rc5 no-shared no-zlib no-zlib-dynamic
+CONFIGURE_ARGS=linux-x86_64 --prefix=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build -O0
 SHLIB_TARGET=linux-shared
 
 # HERE indicates where this Makefile lives.  This can be used to indicate
@@ -60,7 +60,7 @@ OPENSSLDIR=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build/ssl
 # PKCS1_CHECK - pkcs1 tests.
 
 CC= gcc
-CFLAG= -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -m64 -DL_ENDIAN -DTERMIO -O3 -Wall -DMD32_REG_T=int -DMD5_ASM
+CFLAG= -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -O0 -m64 -DL_ENDIAN -DTERMIO -O3 -Wall -DMD32_REG_T=int -DMD5_ASM
 DEPFLAG= -DOPENSSL_NO_CAMELLIA -DOPENSSL_NO_GMP -DOPENSSL_NO_MDC2 -DOPENSSL_NO_RC5 
 PEX_LIBS= 
 EX_LIBS= -ldl
