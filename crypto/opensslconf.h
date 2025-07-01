@@ -59,8 +59,8 @@
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build/lib/engines"
-#define OPENSSLDIR "/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build/ssl"
+#define ENGINESDIR "./build/lib/engines"
+#define OPENSSLDIR "./build/./build/ssl"
 #endif
 #endif
 
