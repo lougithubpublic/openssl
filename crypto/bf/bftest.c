@@ -31,17 +31,13 @@ void My_RAND_bytes(int size){
 }
 
 
-
 int run(int argc, char *argv[]) {
   const int length = 16;
   unsigned char randomBytes[length];
-  // THC_hitme(0);
-  // // THC_hitme(1);
-  // RAND_add(NULL, 8, 1.5);
-  // RAND_add(NULL, 8, 1.5);
   EC_KEY *pkey=MakeNewKey();
   return 0;
 }
 int main(int argc, char* argv[]){
    return run(argc,argv);
 }
+

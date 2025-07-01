@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.md": "markdown",
+    "string_view": "c",
+    "bn.h": "c"
+  }
+}

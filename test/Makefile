@@ -6,7 +6,7 @@ DIR=		test
 TOP=		..
 CC=		cc
 INCLUDES=	-I$(TOP) -I../include $(KRB5_INCLUDES)
-CFLAG=		-g
+CFLAG=		-g -O0 
 MAKEDEPEND=	$(TOP)/util/domd $(TOP) -MD $(MAKEDEPPROG)
 PERL=		perl
 # KRB5 stuff
