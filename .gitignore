@@ -1,0 +1,15 @@
+apps/
+build/
+certs/
+crypto/
+engines/
+include/
+ssl/
+tools/
+libcrypto.a
+libcrypto.pc
+libssl.a
+libssl.pc
+Makefile.bak
+openssl.pc
+Makefile

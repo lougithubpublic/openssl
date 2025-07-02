@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "windows": {
+    "options": {
+      "shell": {
+        "executable": "wsl.exe",
+        "args": []
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-g", // 生成调试信息
+        "-O0", // 禁用优化，便于调试
+        "-Wall", // 启用所有警告
+        "-Wextra", // 启用额外警告
+        "test/bftest.c",
+        "-o",
+        "test/bftest",
+        "-I${workspaceFolder}/include",
+        "-L${workspaceFolder}/build/lib",
+        "${workspaceFolder}/build/lib/libssl.a", // 指定静态库文件路径
+        "${workspaceFolder}/build/lib/libcrypto.a"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "detail": "Generated task by VSCode",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    }
+  ]
+}
