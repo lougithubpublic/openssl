@@ -13,8 +13,8 @@ SHLIB_MAJOR=0
 SHLIB_MINOR=9.8
 SHLIB_EXT=.so.$(SHLIB_MAJOR).$(SHLIB_MINOR)
 PLATFORM=linux-x86_64
-OPTIONS=-g --prefix=./build no-camellia no-gmp no-krb5 no-mdc2 no-rc5 no-shared no-zlib no-zlib-dynamic
-CONFIGURE_ARGS=linux-x86_64 -g --prefix=./build
+OPTIONS=-O0 -g --prefix=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build no-camellia no-gmp no-krb5 no-mdc2 no-rc5 no-shared no-zlib no-zlib-dynamic
+CONFIGURE_ARGS=linux-x86_64 -O0 -g --prefix=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build
 SHLIB_TARGET=linux-shared
 
 # HERE indicates where this Makefile lives.  This can be used to indicate
@@ -26,10 +26,10 @@ HERE=.
 # for, say, /usr/ and yet have everything installed to /tmp/somedir/usr/.
 # Normally it is left empty.
 INSTALL_PREFIX=
-INSTALLTOP=./build
+INSTALLTOP=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build
 
 # Do not edit this manually. Use Configure --openssldir=DIR do change this!
-OPENSSLDIR=./build/./build/ssl
+OPENSSLDIR=/mnt/c/Users/loukw/Documents/vsCodeProjects/wsl/openssl/build/ssl
 
 # NO_IDEA - Define to build without the IDEA algorithm
 # NO_RC4  - Define to build without the RC4 algorithm
@@ -60,7 +60,7 @@ OPENSSLDIR=./build/./build/ssl
 # PKCS1_CHECK - pkcs1 tests.
 
 CC= gcc
-CFLAG= -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -g -m64 -DL_ENDIAN -DTERMIO -O3 -Wall -DMD32_REG_T=int -DMD5_ASM
+CFLAG= -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -O0 -g -m64 -DL_ENDIAN -DTERMIO -O3 -Wall -DMD32_REG_T=int -DMD5_ASM
 DEPFLAG= -DOPENSSL_NO_CAMELLIA -DOPENSSL_NO_GMP -DOPENSSL_NO_MDC2 -DOPENSSL_NO_RC5 
 PEX_LIBS= 
 EX_LIBS= -ldl

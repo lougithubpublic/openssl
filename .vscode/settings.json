@@ -2,7 +2,8 @@
   "files.associations": {
     "*.md": "markdown",
     "string_view": "c",
-    "bn.h": "c"
+    "bn.h": "c",
+    "time.h": "c"
   },
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "gcc",

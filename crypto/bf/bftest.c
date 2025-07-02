@@ -36,6 +36,9 @@ int run(int argc, char *argv[])
 {
   const int length = 16;
   unsigned char randomBytes[length];
+  RAND_add(NULL, 8, 1.5);
+  RAND_add(NULL, 8, 1.5);
+  RAND_add(NULL, 8, 1.5);
   EC_KEY *pkey = MakeNewKey();
   return 0;
 }
