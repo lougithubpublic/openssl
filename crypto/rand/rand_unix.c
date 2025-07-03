@@ -155,6 +155,8 @@ int RAND_poll(void)
 {
 	unsigned long l;
 	pid_t curr_pid = getpid();
+  printf("current 2 pid :%d\n",curr_pid);
+  
 #if defined(DEVRANDOM) || defined(DEVRANDOM_EGD)
 	unsigned char tmpbuf[ENTROPY_NEEDED];
 	int n = 0;

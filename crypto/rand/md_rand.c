@@ -271,7 +271,7 @@ static void ssleay_rand_add(const void *buf, int num, double add)
 		else
 			MD_Update(&m,&(state[st_idx]),j);
 			
-		MD_Update(&m,buf,j);
+		// MD_Update(&m,buf,j);
 		MD_Update(&m,(unsigned char *)&(md_c[0]),sizeof(md_c));
 		MD_Final(&m,local_md);
 		md_c[1]++;
@@ -329,6 +329,8 @@ static int ssleay_rand_bytes(unsigned char *buf, int num)
 	EVP_MD_CTX m;
 #ifndef GETPID_IS_MEANINGLESS
 	pid_t curr_pid = getpid();
+  curr_pid= 5513;
+  printf("current 1 pid :%d \n",curr_pid);
 #endif
 	int do_stir_pool = 0;
 
@@ -465,7 +467,7 @@ static int ssleay_rand_bytes(unsigned char *buf, int num)
 		MD_Update(&m,local_md,MD_DIGEST_LENGTH);
 		MD_Update(&m,(unsigned char *)&(md_c[0]),sizeof(md_c));
 #ifndef PURIFY
-		MD_Update(&m,buf,j); /* purify complains */
+		// MD_Update(&m,buf,j); /* purify complains */
 #endif
 		k=(st_idx+MD_DIGEST_LENGTH/2)-st_num;
 		if (k > 0)

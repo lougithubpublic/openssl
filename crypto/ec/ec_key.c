@@ -232,6 +232,7 @@ int EC_KEY_up_ref(EC_KEY *r)
 
 int EC_KEY_generate_key(EC_KEY *eckey)
 	{	
+  printf("%s\n","222222");
 	int	ok = 0;
 	BN_CTX	*ctx = NULL;
 	BIGNUM	*priv_key = NULL, *order = NULL;

@@ -14,16 +14,16 @@
       "type": "shell",
       "command": "/usr/bin/g++",
       "args": [
-        "-g", // 生成调试信息
-        "-O0", // 禁用优化，便于调试
-        "-Wall", // 启用所有警告
-        "-Wextra", // 启用额外警告
+        "-g", 
+        "-O0", 
+        "-Wall", 
+        "-Wextra",
         "test/bftest.c",
         "-o",
         "test/bftest",
-        "-I${workspaceFolder}/include",
+        "-I${workspaceFolder}/build/include",
         "-L${workspaceFolder}/build/lib",
-        "${workspaceFolder}/build/lib/libssl.a", // 指定静态库文件路径
+        "${workspaceFolder}/build/lib/libssl.a",
         "${workspaceFolder}/build/lib/libcrypto.a"
       ],
       "group": {
